@@ -5,11 +5,16 @@ def jogar():
     print('Bem Vindo no jogo da Forca')
     print('*'*40)
 
-    secreta = 'banana'
-    lista = ['_','_','_','_','_','_']
+    secreta = 'dia-a-dia'
+    lista = []
+    for letra in secreta:
+        if letra == '-':
+            lista.append('-')
+        else:
+            lista.append('_')
     enforcou = False
     ganhou = False
-    erro = len(secreta)
+    erro = 6
     print(f'A palavra secreta possue {len(secreta)} letras')
     while (not ganhou) and (not enforcou):
         print(f'Você possue {erro} tentativas')
