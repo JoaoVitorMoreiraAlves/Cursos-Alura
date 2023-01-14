@@ -8,7 +8,7 @@ def msg(txt):
 def sortear_palavra():
     #Sortear uma fruta no arquivo palavras.txt
     from random import randrange
-    arquivo = open('palavras.txt', 'r')
+    arquivo = open('Python\Python-Avançando-na-Linguagem\EX-1-Continuação-do-Ex-2\palavras.txt', 'r')
     palavras = []
     for linha in arquivo:
         linha = linha.strip()
