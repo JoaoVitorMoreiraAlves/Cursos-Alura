@@ -5,25 +5,30 @@ def jogar():
     print('Bem Vindo no jogo da Forca')
     print('*'*40)
 
-    palavra_secreta = 'banana'
-    enforcou = False
-    acertou = False
+    secreta = 'banana'
     lista = ['_','_','_','_','_','_']
-    #Enquanto não enforcou E não acertou ele continua a permitir o usuário responder!
-    print(f'A Palavra secreta possue {len(palavra_secreta)} letras')
-    while (not enforcou and not acertou):
+    enforcou = False
+    ganhou = False
+    erro = len(secreta)
+    print(f'A palavra secreta possue {len(secreta)} letras')
+    while (not ganhou) and (not enforcou):
+        print(f'Você possue {erro} tentativas')
         for i in lista:
-            print(i,end='')
+            print(i,end=' ')
         print('')
-        chute = str(input("Digite uma letra: ")).strip()
-        if (chute == palavra_secreta):
-            print('Parabéns você acertou a palavra')
-            break
+        chute = str(input("Digite uma letra para o Chute: ")).strip().lower()[0]
+        erro -= 1
+        if chute in secreta:
+            for i in range(0,len(secreta)):
+                if (chute == secreta[i]):
+                    lista[i] = chute
+            ganhou = ('_' not in lista)
         else:
-            if (chute in palavra_secreta):
-            for i in range(0,len(palavra_secreta)):
-                if (chute.lower()[0] == palavra_secreta[i]):
-                    lista[i] = chute.lower().strip()[0]
-        
+            enforcou = (erro < 1)
+        system('cls')
+    if (ganhou):
+        print(f'Parabéns você ganhou a palavra secreta era {secreta.upper()}!!')
+    else:
+        print(f"Você enforcou a palavra secreta era {secreta}")
 if (__name__ == '__main__'):
     jogar()
