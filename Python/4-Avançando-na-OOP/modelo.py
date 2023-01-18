@@ -51,13 +51,12 @@ class Playlist():
         self.nome = nome
         self._programas = programas
     
-    @property
-    def tamanho(self):
+    #Torna a lista Playlist em uma lista iteravel
+    def __getitem__(self,item):
+        return self._programas[item]
+        
+    def __len__(self):
         return len(self._programas)
-    
-    @property
-    def listagem(self):
-        return self._programas
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
 atlanta = Series('atlanta', 2018, 2)
@@ -70,6 +69,6 @@ atlanta.dar_like()
 
 listinha = [vingadores, atlanta]
 minha_playlist = Playlist('fim de semana', listinha)
-print(f'Tamanho da Playlist: {len(minha_playlist.listagem)}')
-for programa in minha_playlist.listagem:
+print(f'Tamanho da Playlist: {len(minha_playlist)}')
+for programa in minha_playlist:
     print(programa)
