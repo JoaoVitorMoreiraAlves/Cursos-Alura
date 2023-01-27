@@ -50,7 +50,6 @@ def enforca(secreta):
     print("       \_______/           ")
 
 
-
 def ganha():
     print("Parabéns, você ganhou!")
     print("       ___________      ")
@@ -63,7 +62,6 @@ def ganha():
     print("           ) (          ")
     print("         _.' '._        ")
     print("        '-------'       ")
-
 
 
 def desenha_forca(erros):
@@ -150,7 +148,7 @@ def jogar():
         ganha()
     else:
         enforca(secreta)
-
-    
+ 
+ 
 if (__name__ == '__main__'):
     jogar()
