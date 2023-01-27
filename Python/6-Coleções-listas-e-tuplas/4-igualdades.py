@@ -31,3 +31,25 @@ print(conta1 in contas)
 print('-'*40)
 print(conta2 in contas)
 print('-'*40)
+
+#Builtins como enumerated, range e desempacotamento automatico de tuplas
+
+idades = [15,87,32,65,56,32,49,37]
+for num in range(0,len(idades)):
+    print(f'Idade {idades[num]} na posição {num}')
+#Posso fazer com enumerated que é melhor
+print('-'*40)
+for indice,valor in enumerate(idades,0):
+    print(f'Indice: {indice} X Valor: {valor}')
+print('-'*40)
+
+usuarios = [
+    ('Guilherme',37,1981),
+    ('Danieal',31,1987),
+    ('Joao',19,2003)]
+
+for nome,idade,nascimento in usuarios: #Desempacotando
+    print(nome)
+print('-'*40)
+for nome, _, _ in usuarios: #Desempacotando só que agora possui os anderlines, O "_" siginifca que estou ignorando a idade e a data de nascimento
+    print(nome)
