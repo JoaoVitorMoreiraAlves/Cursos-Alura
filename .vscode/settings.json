@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./Django/venv/Lib/site-packages",
+        "./Django/venv/Lib/site-packages"
+    ]
+}
